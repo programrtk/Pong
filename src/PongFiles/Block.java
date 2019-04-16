@@ -14,6 +14,11 @@ public class Block implements Locatable {
     private int height;
 
     private Color color;
+    
+    
+    public Block(){
+        
+    }
 
     public Block(int x, int y, int w, int h) {
         xPos = x;
@@ -99,7 +104,7 @@ public class Block implements Locatable {
     * @param col the color to set
     */
     public void setColor(Color col) {
-        this.color = col;
+        //this.color = col;
     }
     
     public void setPos(int x, int y){
@@ -116,24 +121,25 @@ public class Block implements Locatable {
     }
 
     public void draw(Graphics window, Color col) {
-        
+        window.setColor(col);
+        window.fillRect(getxPos(), getyPos(), getWidth(), getHeight());
     }
 
     public boolean equals(Object obj) {
 
         Block test = (Block)obj;
         
-        if(!this.getColor().equals(null) && !test.getColor().equals(null)){
-        if(this.getxPos()==test.getxPos() && this.getyPos()==test.getyPos() && this.getWidth()==test.getWidth() && this.getHeight()==test.getHeight() && this.getColor.equals(test.getColor())){
+        if(this.getColor()!=null && test.getColor()!=null){
+        if(this.getxPos()==test.getxPos() && this.getyPos()==test.getyPos() && this.getWidth()==test.getWidth() && this.getHeight()==test.getHeight() && this.getColor().equals(test.getColor())){
             return true;
         }
         
 
     }else{
-        if(this.getxPos()==test.getxPos() && this.getyPos()==test.getyPos() && this.getWidth()==test.getWidth() && this.getHeight()==test.getHeight() && this.getColor.equals(test.getColor())){
+        if(this.getxPos()==test.getxPos() && this.getyPos()==test.getyPos() && this.getWidth()==test.getWidth() && this.getHeight()==test.getHeight()){
             return true;
         }
-        
+    }
     return false;
     }
 
