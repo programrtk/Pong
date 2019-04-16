@@ -20,6 +20,11 @@ public class Block implements Locatable {
         
     }
 
+    public Block(int x, int y) {
+        xPos = x;
+        yPos = y;
+    }
+    
     public Block(int x, int y, int w, int h) {
         xPos = x;
         yPos = y;
