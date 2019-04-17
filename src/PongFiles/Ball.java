@@ -44,14 +44,13 @@ public class Ball extends Block {
     //this this not done
     public void moveAndDraw(Graphics window) {
         //draw a white ball at old ball location
-        setColor(Color.white);
         draw(window, Color.white);
         setxPos(getxPos() + getxSpeed());
+        setyPos(getyPos() + getySpeed());
 		//setY
 
         //draw the ball at its new location
-        setColor(Color.blue);
-        draw(window, ));
+        draw(window);
     }
     
     
