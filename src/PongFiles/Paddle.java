@@ -14,25 +14,38 @@ public class Paddle extends Block
 
    public Paddle()
    {
-		super(10,10);
+      super(10,10);
       speed =5;
    }
 
 
    //add the other Paddle constructors
 
-
-
-
-
-
-
-
+   public Paddle(int x, int y){
+       super(x, y);
+       speed = 5;
+   }
+   
+   public Paddle(int x, int y, int speed){
+       super(x, y);
+       this.speed = speed;
+   }
+   
+   public Paddle(int x, int y, int w, int h, int speed){
+       super(x, y, w, h);
+       this.speed = speed;
+   }
+   
+   public Paddle(int x, int y, int w, int h, Color c, int speed){
+       super(x, y, w, h, c);
+       this.speed = speed;
+   }
 
 
    public void moveUpAndDraw(Graphics window)
    {
-
+       
+       
 
    }
 
