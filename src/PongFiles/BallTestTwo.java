@@ -36,7 +36,7 @@ class BallTestTwo extends Canvas implements Runnable {
             ball.setxSpeed(-ball.getxSpeed());
         }
 
-        if (!(ball.getySpeed() >= 10 && ball.getySpeed() <= getHeight() - ball.getHeight())) {
+        if (!(ball.getyPos() >= 10 && ball.getyPos() <= getHeight() - ball.getHeight())) {
             ball.setySpeed(-ball.getySpeed());
         }
     }
