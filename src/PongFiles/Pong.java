@@ -32,15 +32,18 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		//set up all variables related to the game
             leftScore = 0;
             rightScore = 0;
-            leftPaddle = new Paddle(20, 20, 10, 70, 5);
 
+            leftPaddle = new Paddle(10, 20, 10, 40, Color.blue, 5);
+            rightPaddle = new Paddle(700, 20, 10, 40, Color.blue, 5);
 
+            rightScore = 0;
+            leftScore = 0;
 
-		keys = new boolean[4];
+            keys = new boolean[4];
 
     
-    	setBackground(Color.WHITE);
-		setVisible(true);
+            setBackground(Color.WHITE);
+            setVisible(true);
 		
 		new Thread(this).start();
 		addKeyListener(this);		//starts the key thread to log key strokes
@@ -95,7 +98,35 @@ public class Pong extends Canvas implements KeyListener, Runnable
 
 		//see if the paddles need to be moved
 
+		if(!(ball.getxPos()>=10 && ball.getxPos()<=550))
+		{
+			ball.setxSpeed(-ball.getxSpeed());
+		}
 
+		if(!(ball.getyPos()>=10 && ball.getyPos()<=450))
+		{
+			ball.setySpeed(-ball.getySpeed());
+		}
+
+		if(keys[0] == true)
+		{
+			//move left paddle up and draw it on the window
+                        leftPaddle.moveUpAndDraw(window);
+		}
+		if(keys[1] == true)
+		{
+			//move left paddle down and draw it on the window
+                        leftPaddle.moveDownAndDraw(window);
+
+		}
+		if(keys[2] == true)
+		{
+                    rightPaddle.moveUpAndDraw(window);
+		}
+		if(keys[3] == true)
+		{
+                    rightPaddle.moveDownAndDraw(window);
+		}
 
 
 

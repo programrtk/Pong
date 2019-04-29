@@ -17,7 +17,11 @@ public class Block implements Locatable {
     
     
     public Block(){
-        
+        xPos = 0;
+        yPos = 0;
+        width = 0;
+        height = 0;
+        color = Color.BLUE;
     }
 
     public Block(int x, int y) {
@@ -109,7 +113,7 @@ public class Block implements Locatable {
     * @param col the color to set
     */
     public void setColor(Color col) {
-        //this.color = col;
+        this.color = col;
     }
     
     public void setPos(int x, int y){
@@ -121,8 +125,6 @@ public class Block implements Locatable {
         //uncomment after you write the set and get methods
         window.setColor(color);
         window.fillRect(getxPos(), getyPos(), getWidth(), getHeight());
-        //window.setColor(color);
-        //window.fillRect(getX(), getY(), getWidth(), getHeight());
     }
 
     public void draw(Graphics window, Color col) {

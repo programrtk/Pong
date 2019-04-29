@@ -14,26 +14,25 @@ class BlinkyBall extends Ball
    //constructors
    public BlinkyBall()
    {
-		super();
+                super();
    }
 
    public BlinkyBall(int x, int y)
    {
-
-
-
+       super(x, y);
+       
    }
 
    public BlinkyBall(int x, int y, int wid, int ht)
    {
-
+       super(x, y, wid, ht);
 
 
    }
 
    public BlinkyBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
    {
-
+       super(x, y, wid, ht, Color.BLUE, xSpd, ySpd);
 
 
    }
@@ -41,7 +40,7 @@ class BlinkyBall extends Ball
    public BlinkyBall(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
    {
 
-
+       super(x, y, wid, ht, col, xSpd, ySpd);
 
 
    }
@@ -57,7 +56,9 @@ class BlinkyBall extends Ball
    public void moveAndDraw(Graphics window)
    {
 
-
+       setColor(randomColor());
+       
+       super.moveAndDraw(window);
 
 
    }

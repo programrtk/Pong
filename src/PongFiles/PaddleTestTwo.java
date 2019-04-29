@@ -19,7 +19,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 {
 	private Ball ball;
 	private Paddle leftPaddle;
-        //private Paddle rightPaddle;
+        private Paddle rightPaddle;
 	private boolean[] keys;		//keeps track of what keys are pressed
 
 	public PaddleTestTwo()
@@ -32,19 +32,12 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		
 		
 		//instantiate a left Paddle
-		leftPaddle = new Paddle(20, 20, 10, 70, Color.blue, 5);
-		
-		
+		leftPaddle = new Paddle(10, 20, 10, 40, Color.blue, 5);
 		
 		//instantiate a right Paddle
-		
-                //rightPaddle = new Paddle(200, 20, 10, 70, Color.blue, 5)
-		
-		
-
-
+		rightPaddle = new Paddle(700, 20, 10, 40, Color.blue, 5);
+                
 		keys = new boolean[5];
-
 
 		//set up the Canvas
 		setBackground(Color.WHITE);
@@ -63,7 +56,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 	{
 		ball.moveAndDraw(window);
 		leftPaddle.draw(window);
-                //rightPaddle.draw(window);
+                rightPaddle.draw(window);
 
 		if(!(ball.getxPos()>=10 && ball.getxPos()<=550))
 		{
@@ -75,24 +68,24 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 			ball.setySpeed(-ball.getySpeed());
 		}
 
-		if(keys[1] == true)
+		if(keys[0] == true)
 		{
 			//move left paddle up and draw it on the window
                         leftPaddle.moveUpAndDraw(window);
 		}
-		if(keys[2] == true)
+		if(keys[1] == true)
 		{
 			//move left paddle down and draw it on the window
                         leftPaddle.moveDownAndDraw(window);
 
 		}
-		if(keys[9] == true)
+		if(keys[2] == true)
 		{
-                    //rightPaddle.moveUpAndDraw(window);
+                    rightPaddle.moveUpAndDraw(window);
 		}
-		if(keys[0] == true)
+		if(keys[3] == true)
 		{
-                    //rightPaddle.moveDownAndDraw(window);
+                    rightPaddle.moveDownAndDraw(window);
 		}
 	}
 
@@ -100,10 +93,10 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 	{
 		switch(toUpperCase(e.getKeyChar()))
 		{
-			case 'W' : keys[1]=true; break;
-			case 'Z' : keys[2]=true; break;
-			case 'I' : keys[9]=true; break;
-			case 'M' : keys[0]=true; break;
+			case 'W' : keys[0]=true; break;
+			case 'Z' : keys[1]=true; break;
+			case 'I' : keys[2]=true; break;
+			case 'M' : keys[3]=true; break;
 		}
 	}
 
@@ -111,10 +104,10 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 	{
 		switch(toUpperCase(e.getKeyChar()))
 		{
-			case 'W' : keys[1]=false; break;
-			case 'Z' : keys[2]=false; break;
-			case 'I' : keys[9]=false; break;
-			case 'M' : keys[0]=false; break;
+			case 'W' : keys[0]=false; break;
+			case 'Z' : keys[1]=false; break;
+			case 'I' : keys[2]=false; break;
+			case 'M' : keys[3]=false; break;
 		}
 	}
 
